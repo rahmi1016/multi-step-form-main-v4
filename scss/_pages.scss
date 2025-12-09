@@ -1,0 +1,89 @@
+.slides-container {
+  @media (min-width: 350px) {
+    height: 100vh;
+    margin-top: -75px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  @media (min-width: 758px) {
+    width: 348px;
+    height: 525px;
+    gap: 32px;
+    margin: 43px 0 0 0;
+  }
+  @media (min-width: 1024px) {
+    width: 450px;
+    height: 553px;
+    margin-top: 47px;
+    gap: 40px;
+  }
+}
+.slide-container {
+  @media (min-width: 350px) {
+    width: 343px;
+    height: fit-content;
+    padding: 32px 24px;
+    border-radius: 10px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  @media (min-width: 758px) {
+    height: 393px;
+    gap: 24px;
+    padding: 0;
+    justify-content: flex-start;
+  }
+  @media (min-width: 1024px) {
+    width: 100%;
+  }
+}
+
+.button-container,
+.buttons-container {
+  @media (min-width: 350px) {
+    width: 100vw;
+    height: 72px;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+  @media (min-width: 758px) {
+    width: 100%;
+    padding: 0;
+  }
+  @media (min-width: 1024px) {
+    height: 96px;
+    align-items: flex-start;
+  }
+}
+.button-container {
+  justify-content: flex-end;
+}
+.buttons-container {
+  justify-content: space-between;
+}
+.next {
+  &:hover {
+    background-color: var(--blue-700);
+  }
+  @media (min-width: 350px) {
+    width: 97px;
+    height: 40px;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--blue-950);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  @media (min-width: 758px) {
+    width: 123px;
+    height: 48px;
+    border-radius: 8px;
+  }
+}

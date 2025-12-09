@@ -1,0 +1,83 @@
+:root {
+  /* primary */
+  --blue-950: hsl(213, 96%, 18%);
+  --purple-600: hsl(243, 100%, 62%);
+  --blue-300: hsl(228, 100%, 84%);
+  --blue-200: hsl(206, 94%, 87%);
+  --red-500: hsl(354, 84%, 57%);
+  /* neutral */
+  --grey-500: hsl(231, 11%, 63%);
+  --purple-200: hsl(229, 24%, 87%);
+  --blue-100: hsl(218, 100%, 97%);
+  --blue-50: hsl(231, 100%, 99%);
+  --white: hsl(0, 100%, 100%);
+  /* addition */
+  --orange: hsl(23, 100%, 75%);
+  --red-450: hsl(353, 76%, 65%);
+  --red-400: hsl(354, 91%, 74%);
+  --purple-500: hsl(243, 100%, 67%);
+  --purple-400: hsl(243, 100%, 77%);
+  --blue-700: hsl(213, 73%, 31%);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+body {
+  @media (min-width: 350px) {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "League Spartan", sans-serif;
+    background-color: var(--blue-200);
+    display: block;
+  }
+  @media (min-width: 758px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.hidden {
+  display: none;
+}
+
+.main-container {
+  margin-bottom: 50px;
+  @media (min-width: 350px) {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 0 0 10px 10px;
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+  }
+  @media (min-width: 758px) {
+    background-color: var(--white);
+    flex-direction: row;
+    width: 686px;
+    height: 600px;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding-right: 58px;
+  }
+  @media (min-width: 1024px) {
+    width: 940px;
+    height: 600px;
+    border-radius: 15px;
+    padding-right: 100px;
+  }
+}

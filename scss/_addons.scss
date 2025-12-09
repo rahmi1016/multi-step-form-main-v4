@@ -1,0 +1,111 @@
+.addOns {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  @media (min-width: 350px) {
+    width: 295px;
+    height: 62px;
+    display: flex;
+    justify-content: space-between;
+    padding: 11.5px 16px;
+    align-items: center;
+    border: 1px solid var(--purple-200);
+    border-radius: 8px;
+    position: relative;
+  }
+  @media (min-width: 758px) {
+    width: 100%;
+    height: 81px;
+  }
+  .addOns-input-con > input {
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    opacity: 0;
+    &:checked {
+      & ~ .checkmark {
+        background-color: var(--purple-600);
+      }
+      & ~ .checkmark:after {
+        display: block;
+      }
+    }
+  }
+  &:hover {
+    border: 1px solid var(--purple-600);
+  }
+}
+
+.addOns-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+}
+.addOns-input-con {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+
+.checker {
+  border: 1px solid var(--purple-600);
+  background-color: var(--blue-50);
+}
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid var(--purple-200);
+  @media (min-width: 350px) {
+    margin-left: -42px;
+  }
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  width: 6.43px;
+  height: 9.87px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  @media (min-width: 350px) {
+    left: 24px;
+    top: 24px;
+  }
+  @media (min-width: 758px) {
+    top: 33px;
+  }
+}
+
+.addOns:has(input[type="checkbox"]:checked) {
+  border: 1px solid var(--purple-600);
+  background-color: var(--blue-50);
+}
+
+.addOns-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @media (min-width: 350px) {
+    height: 38px;
+  }
+  @media (min-width: 758px) {
+    height: 44px;
+  }
+}
+
+.arcade-summary,
+#addOns-pick-container,
+.summary-total {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}

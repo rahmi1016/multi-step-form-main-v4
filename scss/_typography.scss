@@ -1,0 +1,294 @@
+@font-face {
+  font-family: "ubuntuBold";
+  src: url(../assets/fonts/Ubuntu-Bold.ttf);
+}
+@font-face {
+  font-family: "ubuntuMed";
+  src: url(../assets/fonts/Ubuntu-Medium.ttf);
+}
+@font-face {
+  font-family: "ubuntuReg";
+  src: url(../assets/fonts/Ubuntu-Regular.ttf);
+}
+@mixin preset-one {
+  font-family: "ubuntuBold";
+  font-size: 32px;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+@mixin preset-two {
+  font-family: "ubuntuBold";
+  font-size: 24px;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+@mixin preset-three-med {
+  font-family: "ubuntuMed";
+  font-size: 16px;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+@mixin preset-three-reg {
+  font-family: "ubuntuReg";
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+@mixin preset-four-bold {
+  font-family: "ubuntuBold";
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 1px;
+}
+@mixin preset-four-med {
+  font-family: "ubuntuMed";
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0px;
+}
+@mixin preset-four-reg {
+  font-family: "ubuntuReg";
+  font-size: 14px;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+@mixin preset-five {
+  font-family: "ubuntuReg";
+  font-size: 12px;
+  line-height: 120%;
+  letter-spacing: 0px;
+}
+
+/* sidebar */
+.step,
+.step-text {
+  @media (min-width: 320px) {
+    display: none;
+  }
+  @media (min-width: 758px) {
+    display: block;
+  }
+}
+.number {
+  @include preset-four-bold();
+  padding: 6px 10px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--white);
+}
+.checked {
+  background-color: var(--blue-200);
+  color: var(--blue-950);
+  border: none;
+}
+.step {
+  @include preset-five();
+  text-transform: uppercase;
+  color: var(--blue-300);
+}
+.step-text {
+  @include preset-four-bold();
+  color: var(--white);
+  text-transform: uppercase;
+}
+
+/* INFO */
+.slide-title {
+  @media (min-width: 320px) {
+    @include preset-two();
+    color: var(--blue-950);
+  }
+  @media (min-width: 758px) {
+    @include preset-one();
+  }
+}
+.slide-subtitle {
+  @include preset-three-reg();
+  color: var(--grey-500);
+  margin: 0;
+}
+.label {
+  @media (min-width: 350px) {
+    @include preset-five();
+    color: var(--blue-950);
+  }
+  @media (min-width: 758px) {
+    @include preset-four-reg();
+  }
+}
+.warning {
+  @media (min-width: 350px) {
+    @include preset-five();
+    color: var(--red-500);
+  }
+  @media (min-width: 758px) {
+    @include preset-four-bold();
+  }
+}
+
+input::placeholder {
+  @include preset-four-med();
+  color: var(--grey-500);
+}
+input {
+  color: var(--blue-950);
+  @include preset-four-med();
+}
+input:focus {
+  outline: none;
+  border-color: var(--purple-600);
+}
+.next,
+.confirm {
+  @media (min-width: 350px) {
+    @include preset-four-med();
+  }
+  @media (min-width: 758px) {
+    @include preset-three-med();
+  }
+}
+
+/* PLAN */
+.plan-title {
+  @include preset-three-med();
+  color: var(--blue-950);
+}
+.month-price,
+.year-price {
+  @include preset-four-reg();
+  color: var(--grey-500);
+}
+.free {
+  @include preset-five();
+  color: var(--blue-950);
+}
+.slider-text {
+  @include preset-four-med();
+  color: var(--blue-950);
+  text-transform: capitalize;
+}
+.prev {
+  @include preset-three-med();
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  color: var(--grey-500);
+  cursor: pointer;
+  &:hover {
+    color: var(--blue-950);
+  }
+}
+
+/* ADDONS */
+.addOns-title {
+  color: var(--blue-950);
+  @media (min-width: 320px) {
+    @include preset-four-med();
+  }
+  @media (min-width: 758px) {
+    @include preset-three-med();
+  }
+}
+.addOns-para {
+  margin: 0;
+  color: var(--grey-500);
+  @media (min-width: 320px) {
+    @include preset-five();
+  }
+  @media (min-width: 758px) {
+    @include preset-four-reg();
+  }
+}
+
+/* SUMMARY */
+#chosen-plan,
+#chosen-period {
+  color: var(--blue-950);
+  @media (min-width: 320px) {
+    @include preset-four-med();
+  }
+  @media (min-width: 758px) {
+    @include preset-three-med();
+  }
+}
+.arcade-change {
+  color: var(--grey-500);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+  @media (min-width: 320px) {
+    @include preset-four-reg();
+  }
+  &:hover {
+    color: var(--purple-600);
+  }
+}
+#arcade-pick-price {
+  color: var(--blue-950);
+  @media (min-width: 320px) {
+    @include preset-four-bold();
+  }
+  @media (min-width: 758px) {
+    font-family: "ubuntuBold";
+    font-size: 16px;
+  }
+}
+.addOns-picked {
+  color: var(--grey-500);
+  @media (min-width: 320px) {
+    @include preset-four-reg();
+  }
+}
+.addOns-pick-price {
+  color: var(--blue-950);
+  @media (min-width: 320px) {
+    @include preset-four-reg();
+  }
+}
+.summary-total-text {
+  color: var(--grey-500);
+  @media (min-width: 320px) {
+    @include preset-four-reg();
+  }
+}
+.total-price {
+  color: var(--purple-600);
+  font-family: "ubuntuBold";
+  @media (min-width: 320px) {
+    font-size: 16px;
+  }
+  @media (min-width: 758px) {
+    font-size: 20px;
+  }
+}
+
+/* FINAL */
+.thanks-title {
+  color: var(--blue-950);
+  @media (min-width: 320px) {
+    @include preset-two();
+  }
+  @media (min-width: 758px) {
+    @include preset-one();
+  }
+}
+.thank-para {
+  margin: 0;
+  text-align: center;
+  color: var(--grey-500);
+  @media (min-width: 320px) {
+    @include preset-three-reg();
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}

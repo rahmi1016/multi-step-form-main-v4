@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="dist/style.css" />
+
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="sidebar-container">
+        <div class="step-container" onclick="currentSlide(1)">
+          <div class="number">1</div>
+          <div class="step-subcon">
+            <div class="step">Step 1</div>
+            <div class="step-text">Your info</div>
+          </div>
+        </div>
+        <div class="step-container" onclick="currentSlide(2)">
+          <div class="number">2</div>
+          <div class="step-subcon">
+            <div class="step">Step 2</div>
+            <div class="step-text">Select plan</div>
+          </div>
+        </div>
+        <div class="step-container" onclick="currentSlide(3)">
+          <div class="number">3</div>
+          <div class="step-subcon">
+            <div class="step">Step 3</div>
+            <div class="step-text">Add-ons</div>
+          </div>
+        </div>
+        <div class="step-container" onclick="currentSlide(4)">
+          <div class="number">4</div>
+          <div class="step-subcon">
+            <div class="step">Step 4</div>
+            <div class="step-text">Summary</div>
+          </div>
+        </div>
+      </div>
+      <div class="slides-container">
+        <div class="slide-container" id="info">
+          <div class="slide-header">
+            <div class="slide-title">Personal info</div>
+            <div class="slide-subtitle">Please provide your name, email address, and phone number.</div>
+          </div>
+          <div class="slide-content">
+            <div class="info-input">
+              <div class="label-container">
+                <div class="label">Name</div>
+                <div id="name" class="warning hidden">This field is required</div>
+              </div>
+              <input type="text" name="name" class="input-text" placeholder="e.g Stephen King" />
+            </div>
+            <div class="info-input">
+              <div class="label-container">
+                <div class="label">Email Address</div>
+                <div id="email" class="warning hidden">This field is required</div>
+              </div>
+              <input type="text" name="email"  class="input-text" placeholder="e.g stephenking@lorem.com" />
+            </div>
+            <div class="info-input">
+              <div class="label-container">
+                <div class="label">Phone Number</div>
+                <div id="phone" class="warning hidden">This field is required</div>
+              </div>
+              <input type="number" name="phone" class="input-text" placeholder="e.g +1 234 567 890" />
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <button class="next" id="next-one" onclick="infoSubmit()">Next Step</button>
+        </div>
+      </div>
+      <div class="slides-container">
+      <div class="slide-container" id="plan">
+        <div class="slide-header">
+          <div class="slide-title">Select your plan</div>
+          <div class="slide-subtitle">You have the option of monthly or yearly billing.</div>
+        </div>
+        <div class="slide-content">
+          <div class="plans-container">
+            <div class="plan-container">
+              <img src="assets/images/icon-arcade.svg" alt="icon-arcade" />
+              <div class="plans">
+                <div class="plan-text">
+                  <div class="plan-title">Arcade</div>
+                  <div class="month-price" id="arcade-monthly-price">$9/mo</div>
+                  <div class="year-price hidden" id="arcade-year-price">$90/yr</div>
+                </div>
+                <div class="hidden free">2 months free</div>
+              </div>
+            </div>
+            <div class="plan-container">
+              <img src="assets/images/icon-advanced.svg" alt="icon-advanced" />
+              <div class="plans">
+                <div class="plan-text">
+                  <div class="plan-title">Advanced</div>
+                  <div class="month-price" id="advanced-monthly-price">$12/mo</div>
+                  <div class="year-price hidden" id="advanced-year-price">$120/yr</div>
+                </div>
+                <div class="hidden free">2 months free</div>
+              </div>
+            </div>
+            <div class="plan-container">
+              <img src="assets/images/icon-pro.svg" alt="icon-pro" />
+              <div class="plans">
+                <div class="plan-text">
+                  <div class="plan-title">Pro</div>
+                  <div class="month-price" id="pro-monthly-price">$15/mo</div>
+                  <div class="year-price hidden" id="pro-year-price">$150/yr</div>
+                </div>
+                <div class="hidden free">2 months free</div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-container">
+            <div class="slider-text">monthly</div>
+            <label class="switch">
+              <input type="checkbox" id="sliding" onclick="onSlidering()" />
+              <span class="slider"></span>
+            </label>
+            <div class="slider-text">yearly</div>
+          </div>
+        </div>
+      </div>
+        <div class="buttons-container">
+          <button class="prev" onclick="plusSlides(-1)">Go Back</button>
+          <button class="next" onclick="planSubmit()" id="next-two">Next Step</button>
+        </div>
+      </div>
+      <div class="slides-container">
+      <div class="slide-container" id="add-ons">
+        <div class="slide-header">
+          <div class="slide-title">Pick add-ons</div>
+          <div class="slide-subtitle">Add-ons help enchance your gaming experience</div>
+        </div>
+        <div class="addOns-content">
+          <div class="addOns">
+            <div class="addOns-input-con">
+              <input type="checkbox" name="addons" value="Online service" data-month="1" data-year="10" /><span class="checkmark"></span>
+              <div class="addOns-text-container">
+                <div class="addOns-title">Online service</div>
+                <p class="addOns-para">Access to multiplayer games</p>
+              </div>
+            </div>
+            <div class="month-price">+$1/mo</div>
+            <div class="year-price hidden">+$10/yr</div>
+          </div>
+          <div class="addOns">
+            <div class="addOns-input-con">
+              <input type="checkbox" name="addons" value="Larger storage" data-month="2" data-year="20" /><span class="checkmark"></span>
+              <div class="addOns-text-container">
+                <div class="addOns-title">Larger storage</div>
+                <p class="addOns-para">Extra 1TB of cloud save</p>
+              </div>
+            </div>
+            <div class="month-price">+$2/mo</div>
+            <div class="year-price hidden">+$20/yr</div>
+          </div>
+          <div class="addOns">
+            <div class="addOns-input-con">
+              <input type="checkbox" name="addons" value="Customizable profile" data-month="2" data-year="20" /><span class="checkmark"></span>
+              <div class="addOns-text-container">
+                <div class="addOns-title">Customizable Profile</div>
+                <p class="addOns-para">Custom theme on your profile</p>
+              </div>
+            </div>
+            <div class="month-price">+$2/mo</div>
+            <div class="year-price hidden">+$20/yr</div>
+          </div>
+        </div></div>
+        <div class="buttons-container">
+          <button class="prev" onclick="plusSlides(-1)">Go Back</button>
+          <button class="next" id="next-three" onclick="addSubmit()">Next Step</button>
+        </div>
+      </div>
+      <div class="slides-container">
+      <div class="slide-container" id="summary">
+        <div class="slide-header">
+          <div class="slide-title">Finishing up</div>
+          <div class="slide-subtitle">Double-check everything looks OK before confirming.</div>
+        </div>
+        <div class="summary-content">
+          <div class="summary-container" id="summary-container">
+            <div class="arcade-summary">
+              <div class="arcade-summary-subcon">
+                <div class="arcade-summary-text">
+                <div id="chosen-plan"></div>&nbsp 
+                <div id="chosen-period"></div>
+              </div>
+                <div class="arcade-change" id="arcade-change" onclick="onChanging()">Change</div>
+              </div>
+              <div id="arcade-pick-price"></div>
+            </div>
+            <hr />
+            <div id="addOns-pick-container"></div>
+          </div>
+          <div class="summary-total">
+            <div class="summary-total-text">Total (per <span id="period">month</span>)</div>
+            <div class="total-price" id="total-price"></div>
+          </div>
+        </div></div>
+        <div class="buttons-container">
+          <button class="prev" onclick="plusSlides(-1)">Go Back</button>
+          <button class="next" onclick="plusSlides(1)" id="next-four">Next Step</button>
+        </div>
+      </div>
+      <div class="slides-container">
+      <div class="slide-container" id="final">
+        <div class="final-content">
+          <img src="assets/images/icon-thank-you.svg" alt="icon-thank-you" />
+          <div class="thanks-title">Thank you!</div>
+          <p class="thank-para">
+          Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at
+          support@loremgaming.com.
+         </p>
+      </div>
+    </div>
+        <div class="button-container">
+          <button class="next" onclick="confirm()">Confirm</button>
+        </div>
+      
+    </div>
+
+    <!-- <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Your Name Here</a>.
+    </div> -->
+    <script src="/script.js"></script>
+  </body>
+</html>
